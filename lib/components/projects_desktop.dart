@@ -43,7 +43,7 @@ class MoreProjectsDesktop extends StatelessWidget {
                 onTap: () => launchUrl.launchURLBrowser(
                     'https://github.com/KingDavid360/abuad-footbal-league'),
                 child: const ProjectsContainer(
-                  title: 'Fantasy football app design ',
+                  title: 'Fantasy football app design [private project] ',
                   text:
                       'A design of the a fantasy football gaming app with flutter ',
                 ),
