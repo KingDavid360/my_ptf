@@ -24,7 +24,7 @@ class PortfolioMobile extends StatelessWidget {
             children: [
               const Center(
                 child: Text(
-                  'Ongoing Project',
+                  'Portfolio',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.black,

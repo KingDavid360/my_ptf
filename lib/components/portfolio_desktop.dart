@@ -24,7 +24,7 @@ class PortfolioDesktop extends StatelessWidget {
                 SizedBox(height: 100),
                 const Center(
                   child: Text(
-                    'Ongoing Project',
+                    'Portfolio',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 46.29,

@@ -109,12 +109,17 @@ class _ContactMeDesktopState extends State<ContactMeDesktop> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Flexible(
-                      child: CustomFormField(
-                        invalidText: 'Enter your name',
-                        text: 'NAME',
-                        controller: nameController,
-                        formType: 'name',
-                        textInputType: TextInputType.name,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                            border: Border(
+                                bottom: BorderSide(color: Colors.black))),
+                        child: CustomFormField(
+                          invalidText: 'Enter your name',
+                          text: 'NAME',
+                          controller: nameController,
+                          formType: 'name',
+                          textInputType: TextInputType.name,
+                        ),
                       ),
                     ),
                     SizedBox(width: 20),
@@ -168,12 +173,17 @@ class _ContactMeDesktopState extends State<ContactMeDesktop> {
                 SizedBox(height: 30),
                 Padding(
                   padding: EdgeInsets.only(right: size.width * 0.3),
-                  child: CustomFormField(
-                    text: 'WRITE YOUR MESSAGE...',
-                    controller: messageController,
-                    invalidText: 'Enter your message',
-                    formType: 'message',
-                    textInputType: TextInputType.multiline,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        border:
+                            Border(bottom: BorderSide(color: Colors.black))),
+                    child: CustomFormField(
+                      text: 'WRITE YOUR MESSAGE...',
+                      controller: messageController,
+                      invalidText: 'Enter your message',
+                      formType: 'message',
+                      textInputType: TextInputType.multiline,
+                    ),
                   ),
                 ),
                 SizedBox(height: 5),
