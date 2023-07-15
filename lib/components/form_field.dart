@@ -24,36 +24,41 @@ class CustomFormField extends StatefulWidget {
 class _CustomFormFieldState extends State<CustomFormField> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: widget.controller,
-      keyboardType: widget.textInputType,
-      maxLengthEnforcement: MaxLengthEnforcement.enforced,
-      validator: (formType) => formType!.isNotEmpty ? null : widget.invalidText,
-      style: TextStyle(
-        color: Colors.white,
-        fontWeight: FontWeight.w700,
-        fontSize: 20,
-      ),
-      decoration: InputDecoration(
-        label: Text(
-          widget.text,
-          style: const TextStyle(
-            color: Colors.grey,
-            fontWeight: FontWeight.w700,
-            fontSize: 20,
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+          border: Border(bottom: BorderSide(color: Colors.black))),
+      child: TextFormField(
+        controller: widget.controller,
+        keyboardType: widget.textInputType,
+        maxLengthEnforcement: MaxLengthEnforcement.enforced,
+        validator: (formType) =>
+            formType!.isNotEmpty ? null : widget.invalidText,
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.w700,
+          fontSize: 20,
         ),
-        suffixIcon: widget.controller.text.isEmpty
-            ? Container(width: 0)
-            : IconButton(
-                icon: Icon(
-                  Icons.close,
-                  color: Colors.white,
+        decoration: InputDecoration(
+          label: Text(
+            widget.text,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w700,
+              fontSize: 20,
+            ),
+          ),
+          suffixIcon: widget.controller.text.isEmpty
+              ? Container(width: 0)
+              : IconButton(
+                  icon: Icon(
+                    Icons.close,
+                    color: Colors.white,
+                  ),
+                  onPressed: () => widget.controller.clear(),
                 ),
-                onPressed: () => widget.controller.clear(),
-              ),
-        enabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(width: 2, color: Colors.white),
+          enabledBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(width: 2, color: Colors.white),
+          ),
         ),
       ),
     );

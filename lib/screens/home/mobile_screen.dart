@@ -19,68 +19,108 @@ class _MobileScreenState extends State<MobileScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 50.0, top: 20),
-        child: ListView(
+    return Stack(
+      children: [
+        Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: Colors.white,
+        ),
+        Image.asset(
+          'images/dark_background.png',
+          fit: BoxFit.cover,
+          height: double.infinity,
+          width: double.infinity,
+          alignment: Alignment.center,
+        ),
+        ListView(
           controller: _scrollController,
           shrinkWrap: true,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 50),
-                const Text(
-                  'ECHATAH KINGDAVID',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 35,
-                      color: Colors.white),
-                ),
-                SizedBox(height: 10),
-                const Text(
-                  'I\'m a mobile app developer based in Nigeria',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, top: 50, right: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Hello 👋🏾, I’m King David and I’m a',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22,
+                      fontFamily: 'Calibri',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  const Text(
+                    'Mobile Application \nDeveloper ',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Colors.black,
                       fontSize: 25,
-                      color: Colors.grey),
-                ),
-                SizedBox(height: 10),
-                const Text(
-                  'I\'m a passionate and curious software developer'
-                  ' who is an enthusiast in solving problems. I build '
-                  'cross platform application with flutter framework and dart programming language.',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                      color: Colors.white),
-                ),
-                SizedBox(height: 10),
-                Padding(
-                  padding: EdgeInsets.only(right: size.width * 0.35),
-                  child: InkWell(
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  const Text(
+                    'I’m a passionate and curious software developer who is ab enthusiast in solving problems .I build cross platform application with flutter and dart programming language ',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontFamily: 'Calibri',
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Padding(
+                    padding: EdgeInsets.only(right: size.width * 0.35),
+                    child: InkWell(
                       onTap: () => _scrollController.animateTo(
-                            _scrollController.position.maxScrollExtent,
-                            duration: Duration(milliseconds: 1000),
-                            curve: Curves.easeIn,
+                        _scrollController.position.maxScrollExtent,
+                        duration: Duration(milliseconds: 1000),
+                        curve: Curves.easeIn,
+                      ),
+                      child: Container(
+                        width: 268,
+                        height: 72,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFF8873EF),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40),
                           ),
-                      child: Buttons(text: 'Contact me')),
-                )
-              ],
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Contact me',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Suez One',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
-            SizedBox(height: 100),
+            SizedBox(height: 80),
             PortfolioMobile(),
-            SizedBox(height: 50),
             MoreProjectsMobile(),
-            SizedBox(height: 100),
-            AboutMeMobile(),
-            SizedBox(height: 100),
+            SizedBox(height: 80),
             SkillsMobile(),
-            SizedBox(height: 100),
+            SizedBox(height: 80),
+            AboutMeMobile(),
+            SizedBox(height: 80),
             ContactMobile(),
           ],
         ),
-      ),
+      ],
     );
   }
 }

@@ -15,17 +15,20 @@ class MoreProjectsDesktop extends StatelessWidget {
           child: Text(
             'More projects',
             style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 25,
-                color: Colors.white38),
+              color: Colors.black,
+              fontSize: 27,
+              fontFamily: 'Raleway',
+              fontWeight: FontWeight.w800,
+            ),
           ),
         ),
         SizedBox(height: 30),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Flexible(
+              flex: 1,
               child: InkWell(
                 onTap: () => launchUrl.launchURLBrowser(
                     'https://github.com/KingDavid360/tweeter'),
@@ -39,6 +42,7 @@ class MoreProjectsDesktop extends StatelessWidget {
             ),
             SizedBox(width: 20),
             Flexible(
+              flex: 1,
               child: InkWell(
                 onTap: () => launchUrl.launchURLBrowser(
                     'https://github.com/KingDavid360/abuad-footbal-league'),
@@ -51,18 +55,23 @@ class MoreProjectsDesktop extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 30),
-        Center(
-          child: InkWell(
-            onTap: () => launchUrl.launchURLBrowser(
-                'https://github.com/KingDavid360?tab=repositories'),
-            child: const Text(
-              'View all projects on github',
-              style: TextStyle(
+        // SizedBox(height: 30),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 25.0),
+          child: Center(
+            child: InkWell(
+              onTap: () => launchUrl.launchURLBrowser(
+                  'https://github.com/KingDavid360?tab=repositories'),
+              child: const Text(
+                'View all projects on github',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontFamily: 'Raleway',
+                  fontWeight: FontWeight.w700,
                   decoration: TextDecoration.underline,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 18,
-                  color: Colors.white),
+                ),
+              ),
             ),
           ),
         ),

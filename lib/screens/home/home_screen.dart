@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Color(0xff2B3856),
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       body: screenDetector.isDesktop(context)
           ? DesktopScreen()
           : screenDetector.isMobile(context)

@@ -16,9 +16,9 @@ class Buttons extends StatelessWidget {
           width: 2.5,
         ),
       ),
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Center(
           child: Text(
             text,
             style: const TextStyle(

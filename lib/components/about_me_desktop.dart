@@ -14,7 +14,7 @@ class AboutMeDesktop extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          color: Colors.black,
+          color: Color(0xffFCDA69),
           width: double.infinity,
           height: double.infinity,
         ),
@@ -32,7 +32,7 @@ class AboutMeDesktop extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 30,
-                          color: Colors.white),
+                          color: Colors.black),
                     ),
                   ),
                   SizedBox(height: 50),
@@ -58,25 +58,48 @@ class AboutMeDesktop extends StatelessWidget {
                         flex: 1,
                         child: Column(
                           children: [
-                            Text(
+                            const Text(
                               'My name is Echatah KingDavid, I am a flutter developer. I have a curious mind towards'
-                              'life as a whole and that\'s what drives my problem solving skills. This also pushes me to develop'
-                              'myself becasue I\'m always open to developing myself.'
+                              ' life as a whole and that\'s what drives my problem solving skills. This also pushes me to develop'
+                              ' myself because I\'m always open to developing myself.'
                               '\n \nI began  programming with C programming language in 2020 from school then I went in with Java'
-                              'bprogramming language which developed my skills with OOP. \n \n'
+                              ' programming language which developed my skills with OOP. Then in 2022  I began with flutter and'
+                              ' and dart for mobile app development where I have gotten to an advanced level to build beautiful UI\'s. \n \n'
                               ' And I have been able to develop myself through involvement in challenging projects.',
                               style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 20,
-                                  color: Colors.grey),
+                                color: Colors.black,
+                                fontSize: 18.89,
+                                fontFamily: 'Calibri',
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                             SizedBox(height: 20),
                             Padding(
                               padding: EdgeInsets.only(right: size.width * 0.1),
                               child: InkWell(
                                   onTap: () => launchUrl.launchURLBrowser(
-                                      'https://drive.google.com/file/d/1JVYTTVbpHRwRQgSVsUUVC2Ib76sxtHmC/view?usp=sharing'),
-                                  child: Buttons(text: 'Download my CV')),
+                                      'https://drive.google.com/file/d/19MDCEyuicysa3X28GAOtSY0ir7cuKyRk/view?usp=sharing'),
+                                  child: Container(
+                                    width: 268,
+                                    height: 72,
+                                    decoration: ShapeDecoration(
+                                      color: Color(0xFF8873EF),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(40),
+                                      ),
+                                    ),
+                                    child: const Center(
+                                      child: Text(
+                                        'DOWNLOAD CV',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontFamily: 'Suez One',
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    ),
+                                  )),
                             ),
                           ],
                         ),
