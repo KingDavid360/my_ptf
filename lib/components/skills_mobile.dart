@@ -5,144 +5,234 @@ class SkillsMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Padding(
-      padding: const EdgeInsets.only(left: 20.0, right: 20),
+    return Container(
+      color: const Color(0xFF0F172A),
+      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Section Title
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              Container(
+                height: 30,
+                width: 5,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF38BDF8),
+                  borderRadius: BorderRadius.circular(3),
+                ),
+              ),
+              const SizedBox(width: 12),
+              const Text(
                 'My Skills',
-                textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 30,
-                    color: Colors.black),
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ],
           ),
-          SizedBox(height: 50),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+          const SizedBox(height: 16),
+
+          const Text(
+            'Technologies and tools I work with',
+            style: TextStyle(
+              color: Color(0xFFCBD5E1),
+              fontSize: 16,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+
+          const SizedBox(height: 40),
+
+          // Skills Categories
+          const Text(
+            'Mobile Development',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+
+          const SizedBox(height: 24),
+
+          // Mobile Development Skills
+          Wrap(
+            spacing: 20,
+            runSpacing: 20,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'images/flutter_logo.png',
-                    height: 60,
-                    width: 60,
-                  ),
-                  const Text(
-                    'Flutter',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                        color: Colors.black),
-                  ),
-                ],
+              SkillCard(
+                icon: 'images/flutter_logo.png',
+                name: 'Flutter',
+                level: 1,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'images/dart_logo.png',
-                    height: 60,
-                    width: 50,
-                  ),
-                  const Text(
-                    'Dart',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                        color: Colors.black),
-                  ),
-                ],
+              SkillCard(
+                icon: 'images/dart_logo.png',
+                name: 'Dart',
+                level: 0.9,
+              ),
+              SkillCard(
+                icon:
+                    'images/android_logo.png', // You'll need to add this asset
+                name: 'Android',
+                level: 0.6,
               ),
             ],
           ),
-          SizedBox(height: 30),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+          const SizedBox(height: 40),
+
+          // Backend Skills Category
+          const Text(
+            'Backend & Database',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+
+          const SizedBox(height: 24),
+
+          // Backend Skills
+          Wrap(
+            spacing: 20,
+            runSpacing: 20,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'images/firebase_logo.png',
-                    height: 70,
-                    width: 70,
-                  ),
-                  const Text(
-                    'Firebase',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                        color: Colors.black),
-                  ),
-                ],
+              SkillCard(
+                icon: 'images/firebase_logo.png',
+                name: 'Firebase',
+                level: 0.8,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'images/dj.png',
-                    height: 60,
-                    width: 60,
-                  ),
-                  const Text(
-                    'Django',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                        color: Colors.black),
-                  ),
-                ],
+              SkillCard(
+                icon: 'images/python.png',
+                name: 'Python',
+                level: 0.5,
+              ),
+              SkillCard(
+                icon: 'images/dj.png',
+                name: 'Django',
+                level: 0.6,
+              ),
+              SkillCard(
+                icon: 'images/java_logo.png',
+                name: 'Java',
+                level: 0.7,
               ),
             ],
           ),
-          SizedBox(height: 30),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+          const SizedBox(height: 40),
+
+          // Tools Category
+          const Text(
+            'Tools & Others',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+
+          const SizedBox(height: 24),
+
+          // Tools Skills
+          Wrap(
+            spacing: 20,
+            runSpacing: 20,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'images/python.png',
-                    height: 60,
-                    width: 60,
-                  ),
-                  const Text(
-                    'Python',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                        color: Colors.black),
-                  ),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'images/git_logo.png',
-                    height: 70,
-                    width: 70,
-                  ),
-                  const Text(
-                    'Git',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                        color: Colors.black),
-                  ),
-                ],
+              SkillCard(
+                icon: 'images/git_logo.png',
+                name: 'Git',
+                level: 0.85,
               ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SkillCard extends StatelessWidget {
+  final String icon;
+  final String name;
+  final double level;
+
+  const SkillCard({
+    Key? key,
+    required this.icon,
+    required this.name,
+    required this.level,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 150,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1E293B),
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          // Skill Icon
+          Image.asset(
+            icon,
+            height: 50,
+            width: 50,
+          ),
+
+          const SizedBox(height: 12),
+
+          // Skill Name
+          Text(
+            name,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+
+          const SizedBox(height: 12),
+
+          // Skill Level Indicator
+          LinearProgressIndicator(
+            value: level,
+            backgroundColor: const Color(0xFF0F172A),
+            valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF38BDF8)),
+            borderRadius: BorderRadius.circular(4),
+            minHeight: 6,
+          ),
+
+          const SizedBox(height: 8),
+
+          // Skill Level Text
+          Text(
+            '${(level * 100).toInt()}%',
+            style: const TextStyle(
+              color: Color(0xFF94A3B8),
+              fontSize: 12,
+              fontFamily: 'Poppins',
+            ),
           ),
         ],
       ),
